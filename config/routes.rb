@@ -1,5 +1,6 @@
 SocialApp::Application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
   #get "users/new" got removed by placing the statement above
   #get "static_pages/home"
   #get "static_pages/help"
@@ -9,6 +10,8 @@ SocialApp::Application.routes.draw do
   # A more conventional approach, Still achieves the same result as above, The first one is for the home page
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
