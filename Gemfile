@@ -6,6 +6,13 @@ gem 'rails', '4.0.2'
 # This is the gem for encrypting passwords in the database
 gem 'bcrypt-ruby', '3.1.2'
 
+# This is to enable us to put sample data on our database
+gem 'faker', '1.1.2'
+
+#This are the gems for the pagination of the user's list
+gem 'will_paginate', '3.0.4'
+gem 'will_paginate-bootstrap', '~> 1.0.0'
+
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
